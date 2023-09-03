@@ -23,7 +23,7 @@ html {
 /*Navigation  stiles*/
 .menu-icon {
   width: 3rem;
-  height: 3rem;
+  height: 1rem;
   /* background-color: #ccc; */
   position: fixed;
   top: 5rem;
@@ -39,6 +39,13 @@ html {
     width: 3rem;
     height: 0.2rem;
    background-color: #bbb;
+   transition: transform 0.3s;
+}
+.change .line-1{
+    transform:rotateZ(45deg)translate(.7rem,-.1rem);
+}
+.change .line-2{
+    transform:rotateZ(-45deg)translate(.7rem,-.1rem);
 }
 
 .navigation {
@@ -54,16 +61,32 @@ display: flex;
 align-items: center;
 padding-left: 8rem;
 transform: rotateZ(-15deg);
-transition: all .6s;
+transition: all.6s;
 }
 .change .navigation{
    top: 0;
    right: 0;
    transform: rotateZ(0); 
 }
+.navigation .section-border{
+    opacity: 0;
+    visibility: hidden;
+}
+.change .navigation .section-border{
+opacity: 1;
+visibility: visible;
+transition: all .5s .7s;
+}
 .nav-items{
     display: flex;
     flex-direction: column;
+    opacity: 0;
+   visibility: hidden;
+}
+.change .nav-items{
+    opacity: 1;
+    visibility: visible;
+    transition: all.5s .7s;
 }
 .nav-items a{
     font-size: 3rem;
